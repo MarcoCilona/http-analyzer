@@ -1,5 +1,5 @@
 <template lang="pug">
-select.br-4.fw-600.grey--text.grey_light.ph-4.pv-2.custom-select-style.text-align-center
+select.br-4.fw-600.grey--text.grey_light.ph-3.pv-2.custom-select-style.text-align-center(@change='$emit("method")')
   option(v-for='(item, index) in httpMethods', :key='index') {{ item.label }}
 </template>
 

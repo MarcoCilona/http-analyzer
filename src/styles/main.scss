@@ -1,7 +1,10 @@
 $colors: (
+    blue_light: '#598CFF',
     grey: '#BCBCBC',
     grey_light: '#FBFBFB',
     grey_medium: '#F2F2F2',
+    std_white: '#FFFFFF',
+    transparent: 'transparent',
 );
 
 :root {
@@ -44,6 +47,14 @@ $colors: (
 .column {
     display: flex;
     flex-direction: column;
+}
+
+// Display
+$display-values: (block, grid, flex, table);
+@each $value in $display-values {
+    .d-#{$value} {
+        display: #{$value};
+    }    
 }
 
 .row {
@@ -127,5 +138,12 @@ $values: (left, center, right);
 @each $value in $values {
     .text-align-#{$value} {
         text-align: #{$value};
+    }
+}
+
+// Width
+@for $i from 1 through 100 {
+    .width-#{$i} {
+        width: calc(#{$i} * 1%);
     }
 }
