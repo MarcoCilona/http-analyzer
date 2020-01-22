@@ -1,5 +1,5 @@
 <template lang="pug">
-button.blue_light.std_white--text.pv-2.ph-4.br-4.button-custom-style
+button.blue_light.std_white--text.pv-2.ph-4.br-4.button-custom-style(@click='$emit("send-request")')
   span Send
   span
     i.fas.fa-search
