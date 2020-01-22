@@ -1,11 +1,25 @@
 <template lang="pug">
-  div Hello
+.container
+  .row.align-center
+    .column
+      .text-align-center.fs-25.fw-800 200
+      div Everything is fine!
+  .row.align-center.mt-4
+    .grey_medium.pa-2.br-4
+      Select
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
-@Component
+// Components
+import Select from './components/ui/Select.vue';
+
+@Component({
+  components: {
+    Select,
+  },
+})
 export default class App extends Vue {}
 </script>
 
