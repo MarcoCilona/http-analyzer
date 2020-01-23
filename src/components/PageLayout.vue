@@ -9,7 +9,7 @@
   .row.mt-8.align-center
     .direction-column
       .fs-20.uppercase.text-align-center.mb-2 Share
-      .ph-4.pv-1.grey_medium.br-20 {{ shareLink ? shareLink : '-' }}
+      .ph-4.pv-1.grey_medium.br-20.text-align-center {{ shareLink ? shareLink : '-' }}
 </template>
 
 <script lang="ts">
