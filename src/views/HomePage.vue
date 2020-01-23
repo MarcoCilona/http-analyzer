@@ -53,6 +53,7 @@ export default class HomePage extends Vue {
       },
     },
   };
+  results: any = {};
   handleSubmit($event: any) {
     this.prepareWebRequest($event);
     repository.submitRequest(this.webRequest).then((response: AxiosResponse<any>) => {
@@ -73,7 +74,7 @@ export default class HomePage extends Vue {
           request_date: 'Thu, 23 Jan 2020',
           request_server: 'gws',
           status_code: 200,
-          url: 'http://google.it',
+          url: 'http://goole.it',
         },
         request,
       },
@@ -81,7 +82,7 @@ export default class HomePage extends Vue {
   }
   retrieveRequest(id: string) {
     repository.getRequest(id).then((response: AxiosResponse<any>) => {
-      console.log('response', response.data, this);
+      this.results = response.data;
     });
   }
 }
