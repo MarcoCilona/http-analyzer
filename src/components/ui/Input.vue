@@ -1,5 +1,5 @@
 <template lang="pug">
-input.transparent.input-custom-style.width-100(@change='$emit("change")')
+input.transparent.input-custom-style.width-100(@change='$emit("change", $event.target.value)')
 </template>
 
 <script lang="ts">

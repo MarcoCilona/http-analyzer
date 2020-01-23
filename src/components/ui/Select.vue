@@ -1,5 +1,5 @@
 <template lang="pug">
-select.br-4.fw-600.grey--text.grey_light.ph-3.pv-2.custom-select-style.text-align-center(@change='$emit("method")')
+select.br-4.fw-600.grey--text.grey_light.ph-3.pv-2.custom-select-style.text-align-center(@change='$emit("selected", $event.target.value)')
   option(v-for='(item, index) in httpMethods', :key='index') {{ item.label }}
 </template>
 
@@ -16,6 +16,22 @@ export default class Select extends Vue {
     {
       label: 'POST',
       value: 'POST',
+    },
+    {
+      label: 'PUT',
+      value: 'PUT',
+    },
+    {
+      label: 'DELETE',
+      value: 'DELETE',
+    },
+    {
+      label: 'INFO',
+      value: 'INFO',
+    },
+    {
+      label: 'DUMB',
+      value: 'DUMB',
     },
   ];
 }

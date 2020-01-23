@@ -20,6 +20,7 @@ PageLayout(:share-link='shareLink')
 </template>
 
 <script lang="ts">
+import { AxiosResponse } from 'axios';
 import { Component, Vue } from 'vue-property-decorator';
 
 // Components
@@ -27,6 +28,9 @@ import PageLayout from '../components/PageLayout.vue';
 import Search from '../components/Search.vue';
 import ResultCard from '../components/ui/ResultCard.vue';
 import ResultCardRow from '../components/ui/ResultCardRow.vue';
+
+// Repository
+import repository from '../repositories/repository';
 
 @Component({
   components: {
@@ -37,9 +41,17 @@ import ResultCardRow from '../components/ui/ResultCardRow.vue';
   },
 })
 export default class Detail extends Vue {
+  requestId: string = '';
   shareLink?: string = '';
   created() {
-    this.shareLink = `${window.location.origin}/${this.$route.params.idRequest}`;
+    this.requestId = this.$route.params.idRequest;
+    this.retrieveRequest();
+    this.shareLink = `${window.location.origin}/${this.requestId}`;
+  }
+  retrieveRequest() {
+    repository.getRequest(this.requestId).then((response: AxiosResponse<any>) => {
+      console.log(response.data);
+    });
   }
 }
 </script>

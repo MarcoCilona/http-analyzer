@@ -12,7 +12,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'lines-between-class-members': ['error', 'never'],
-    'max-len': ['error', { 'code': 120 }]
+    'max-len': ['error', { 'code': 1000 }]
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',
