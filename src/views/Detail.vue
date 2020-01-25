@@ -45,13 +45,7 @@ export default class Detail extends Vue {
   shareLink?: string = '';
   created() {
     this.requestId = this.$route.params.idRequest;
-    this.retrieveRequest();
     this.shareLink = `${window.location.origin}/${this.requestId}`;
-  }
-  retrieveRequest() {
-    repository.getRequest(this.requestId).then((response: AxiosResponse<any>) => {
-      console.log(response.data);
-    });
   }
 }
 </script>
