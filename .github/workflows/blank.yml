@@ -15,8 +15,9 @@ jobs:
         yarn install
         yarn build
         cd dist
-        git config user.email "marco.cilona@gmail.com"
-        git config user.name "MarcoCilona"
+        git config --global user.email "marco.cilona@gmail.com"
+        git config --global user.name "MarcoCilona"
+        
         git init
         git add -A
         git commit -m 'deploy'
